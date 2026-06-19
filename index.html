@@ -383,13 +383,25 @@ let restartTimer = null;
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 const supported = !!SR;
 
+/* Bump this whenever the built-in catalog (SEED) changes. Devices with an
+   older saved version automatically pick up the new list on next open. */
+const CATALOG_VERSION = 2;
+
 function loadCatalog(){
+  const savedVer = parseInt(store.get("catalogVersion") || "0", 10);
   const raw = store.get("catalog");
-  if(raw){ try{ catalog = JSON.parse(raw); return; }catch{} }
+  if(raw && savedVer >= CATALOG_VERSION){
+    try{ catalog = JSON.parse(raw); return; }catch{}
+  }
+  // First run, or the built-in list is newer than the saved one → load it.
   catalog = SEED.slice();
   store.set("catalog", JSON.stringify(catalog));
+  store.set("catalogVersion", String(CATALOG_VERSION));
 }
-function saveCatalog(){ store.set("catalog", JSON.stringify(catalog)); }
+function saveCatalog(){
+  store.set("catalog", JSON.stringify(catalog));
+  store.set("catalogVersion", String(CATALOG_VERSION));
+}
 function loadPrefs(){
   const raw = store.get("voicePrefs");
   if(raw){ try{ const p=JSON.parse(raw);

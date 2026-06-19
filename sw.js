@@ -1,15 +1,15 @@
-/* Aisle Finder service worker — lets the app load and run offline once installed. */
-const CACHE = "aisle-finder-v10";
+/* Aisle Finder service worker.
+   Strategy: network-first for the app page (so updates appear automatically
+   when online), cache fallback when offline. Other assets are cache-first. */
+const CACHE = "aisle-finder-v11";
 const CORE = ["./", "./index.html"];
 
-// Install: pre-cache the app shell.
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting())
   );
 });
 
-// Activate: drop any old caches from previous versions.
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys()
@@ -18,29 +18,39 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// Fetch: serve from cache first, fall back to network, and cache new GETs as they load
-// (so the Google Fonts files become available offline after the first online visit).
 self.addEventListener("fetch", (event) => {
   const req = event.request;
   if (req.method !== "GET") return;
 
+  const isPage = req.mode === "navigate" || req.destination === "document";
+
+  if (isPage) {
+    // Network-first: always try to load the newest page when online.
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {});
+          return res;
+        })
+        .catch(() => caches.match(req).then((r) => r || caches.match("./index.html")))
+    );
+    return;
+  }
+
+  // Other assets (fonts, etc.): cache-first, then network.
   event.respondWith(
     caches.match(req).then((cached) => {
       if (cached) return cached;
       return fetch(req)
         .then((res) => {
-          // Only cache successful, cacheable responses.
           if (res && (res.ok || res.type === "opaque")) {
             const copy = res.clone();
             caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {});
           }
           return res;
         })
-        .catch(() => {
-          // Offline and not cached: for page navigations, fall back to the app shell.
-          if (req.mode === "navigate") return caches.match("./index.html");
-          return new Response("", { status: 504, statusText: "Offline" });
-        });
+        .catch(() => new Response("", { status: 504, statusText: "Offline" }));
     })
   );
 });

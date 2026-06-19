@@ -1,5 +1,5 @@
 /* Aisle Finder service worker — lets the app load and run offline once installed. */
-const CACHE = "aisle-finder-v9";
+const CACHE = "aisle-finder-v10";
 const CORE = ["./", "./index.html"];
 
 // Install: pre-cache the app shell.

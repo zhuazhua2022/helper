@@ -258,59 +258,67 @@ const SEED = [
   {id:12,name:"Cleaning",category:"Cleaning",keywords:"cleaner lysol clorox wipes spray all purpose",aisle:"10",section:"",note:"Also in aisle 11"},
   {id:13,name:"Cleaning",category:"Cleaning",keywords:"cleaner lysol clorox wipes spray all purpose",aisle:"11",section:"",note:"Also in aisle 10"},
   {id:14,name:"Dish Detergent",category:"Cleaning",keywords:"dish soap dishwasher cascade dawn pods",aisle:"11",section:"",note:""},
-  {id:15,name:"Trash Bags",category:"Cleaning",keywords:"garbage bags hefty glad kitchen bags",aisle:"11",section:"Middle to end of aisle, toward Pet Care side",note:""},
-  {id:16,name:"Pain Relief",category:"Health",keywords:"tylenol advil ibuprofen aspirin aleve medicine painkiller",aisle:"12",section:"",note:""},
-  {id:17,name:"Cough & Cold",category:"Health",keywords:"cold flu cough nyquil dayquil mucinex robitussin",aisle:"12",section:"",note:""},
-  {id:18,name:"Adult Hygiene",category:"Health",keywords:"depends incontinence adult",aisle:"12",section:"",note:""},
-  {id:19,name:"Vitamins",category:"Health",keywords:"vitamins supplements fish oil multivitamin vitamin c",aisle:"13",section:"",note:""},
-  {id:20,name:"Feminine Care",category:"Health",keywords:"tampons pads feminine pantyliners",aisle:"13",section:"",note:""},
-  {id:21,name:"Skin Care",category:"Health & Beauty",keywords:"lotion moisturizer face cream sunscreen cerave olay",aisle:"14",section:"",note:""},
-  {id:22,name:"Shaving",category:"Health & Beauty",keywords:"razor shave gillette blades shaving cream",aisle:"15",section:"",note:""},
-  {id:23,name:"Soap & Body Wash",category:"Health & Beauty",keywords:"body wash soap shower gel dove",aisle:"15",section:"",note:""},
-  {id:24,name:"Deodorant",category:"Health & Beauty",keywords:"deodorant antiperspirant",aisle:"16",section:"",note:""},
-  {id:25,name:"Hair Care",category:"Health & Beauty",keywords:"shampoo conditioner hair",aisle:"16",section:"",note:""},
-  {id:26,name:"Oral Care",category:"Health & Beauty",keywords:"toothpaste toothbrush mouthwash floss crest colgate dental teeth",aisle:"17",section:"",note:""},
-  {id:27,name:"Diapers",category:"Baby",keywords:"diapers huggies pampers",aisle:"18",section:"",note:"Also in aisle 19"},
-  {id:28,name:"Baby Wipes",category:"Baby",keywords:"baby wipes",aisle:"18",section:"",note:""},
-  {id:29,name:"Diapers",category:"Baby",keywords:"diapers huggies pampers",aisle:"19",section:"",note:"Also in aisle 18"},
-  {id:30,name:"Baby Food",category:"Baby",keywords:"baby food formula gerber",aisle:"19",section:"",note:""},
-  {id:31,name:"Baby Care",category:"Baby",keywords:"baby care lotion shampoo",aisle:"19",section:"",note:""},
-  {id:32,name:"Pet Care",category:"Pet",keywords:"dog cat food pet treats litter kibble",aisle:"20",section:"",note:"Also in aisle 21"},
-  {id:33,name:"Pet Care",category:"Pet",keywords:"dog cat food pet treats litter kibble",aisle:"21",section:"",note:"Also in aisle 20"},
-  {id:34,name:"Beer",category:"Beverages",keywords:"beer ipa lager seltzer",aisle:"22",section:"",note:"Check local rules for hours"},
-  {id:35,name:"Spirits",category:"Beverages",keywords:"liquor spirits vodka whiskey rum tequila gin alcohol",aisle:"23",section:"",note:""},
-  {id:36,name:"Juice",category:"Beverages",keywords:"juice orange apple cranberry",aisle:"24",section:"",note:"Also in aisle 25"},
-  {id:37,name:"Soda",category:"Beverages",keywords:"soda pop coke pepsi cola soft drink sprite",aisle:"24",section:"",note:"Also in aisle 25"},
-  {id:38,name:"Juice",category:"Beverages",keywords:"juice orange apple cranberry",aisle:"25",section:"",note:"Also in aisle 24"},
-  {id:39,name:"Soda",category:"Beverages",keywords:"soda pop coke pepsi cola soft drink sprite",aisle:"25",section:"",note:"Also in aisle 24"},
-  {id:40,name:"Energy Drinks",category:"Beverages",keywords:"energy drink red bull monster celsius",aisle:"26",section:"",note:""},
-  {id:41,name:"Iced Tea",category:"Beverages",keywords:"iced tea lipton arizona",aisle:"26",section:"",note:""},
-  {id:42,name:"Sports Drinks",category:"Beverages",keywords:"sports drink gatorade powerade electrolyte",aisle:"27",section:"",note:""},
-  {id:43,name:"Water",category:"Beverages",keywords:"water bottled spring poland",aisle:"27",section:"",note:"Also in aisle 28"},
-  {id:44,name:"Water",category:"Beverages",keywords:"water bottled spring poland",aisle:"28",section:"",note:"Also in aisle 27"},
-  {id:45,name:"Salty Snacks",category:"Snacks",keywords:"chips pretzels popcorn crackers nuts salty snacks lays",aisle:"29",section:"",note:""},
-  {id:46,name:"Nuts",category:"Snacks",keywords:"nuts almonds cashews peanuts trail mix",aisle:"29",section:"Toward the middle/front",note:""},
-  {id:47,name:"Breakfast",category:"Grocery",keywords:"cereal oatmeal pancake breakfast cheerios syrup",aisle:"30",section:"",note:""},
-  {id:48,name:"Breakfast Bars",category:"Grocery",keywords:"granola bars protein bars breakfast bars",aisle:"31",section:"",note:""},
-  {id:49,name:"Coffee & Tea",category:"Grocery",keywords:"coffee tea k-cup keurig beans grounds",aisle:"32",section:"",note:""},
-  {id:50,name:"Baking Needs",category:"Grocery",keywords:"flour sugar baking mix baking soda",aisle:"33",section:"",note:""},
-  {id:51,name:"Spices",category:"Grocery",keywords:"spices seasoning salt pepper",aisle:"34",section:"",note:""},
-  {id:52,name:"Condiments",category:"Grocery",keywords:"ketchup mustard mayo condiments bbq sauce",aisle:"34",section:"",note:""},
-  {id:53,name:"Pickles & Olives",category:"Grocery",keywords:"pickles olives",aisle:"34",section:"",note:""},
-  {id:54,name:"Oils & Dressing",category:"Grocery",keywords:"olive oil cooking oil salad dressing vinegar",aisle:"35",section:"",note:""},
-  {id:55,name:"International Food",category:"Grocery",keywords:"international ethnic asian mexican goya",aisle:"36",section:"",note:""},
-  {id:56,name:"Soup",category:"Grocery",keywords:"soup broth ramen",aisle:"36",section:"",note:""},
-  {id:57,name:"Packaged Sides",category:"Grocery",keywords:"sides rice mac and cheese mashed potato stuffing",aisle:"36",section:"",note:"Also in aisle 37"},
-  {id:58,name:"Packaged Sides",category:"Grocery",keywords:"sides rice mac and cheese mashed potato stuffing",aisle:"37",section:"",note:"Also in aisle 36"},
-  {id:59,name:"Pasta & Sauces",category:"Grocery",keywords:"pasta spaghetti marinara sauce noodles barilla",aisle:"38",section:"",note:""},
-  {id:60,name:"Canned Meat & Fish",category:"Grocery",keywords:"canned tuna chicken salmon spam",aisle:"39",section:"",note:""},
-  {id:61,name:"Canned Fruit",category:"Grocery",keywords:"canned fruit peaches pineapple",aisle:"39",section:"",note:""},
-  {id:62,name:"Canned Vegetables",category:"Grocery",keywords:"canned vegetables corn green beans peas",aisle:"39",section:"",note:""},
-  {id:63,name:"Paper Towels",category:"Paper Goods",keywords:"paper towels bounty kitchen roll",aisle:"40",section:"",note:""},
-  {id:64,name:"Napkins",category:"Paper Goods",keywords:"napkins",aisle:"40",section:"",note:""},
-  {id:65,name:"Bath Tissue",category:"Paper Goods",keywords:"toilet paper tp bath tissue charmin",aisle:"41",section:"",note:""},
-  {id:66,name:"Facial Tissue",category:"Paper Goods",keywords:"tissue kleenex facial",aisle:"41",section:"",note:""},
-  {id:67,name:"Flowers",category:"Floral",keywords:"flowers bouquet roses floral",aisle:"Floral",section:"Refrigerated case near aisles 29–30",note:""}
+  {id:15,name:"Pain Relief",category:"Health",keywords:"tylenol advil ibuprofen aspirin aleve medicine painkiller",aisle:"12",section:"",note:""},
+  {id:16,name:"Cough & Cold",category:"Health",keywords:"cold flu cough nyquil dayquil mucinex robitussin",aisle:"12",section:"",note:""},
+  {id:17,name:"Adult Hygiene",category:"Health",keywords:"depends incontinence adult",aisle:"12",section:"",note:""},
+  {id:18,name:"Vitamins",category:"Health",keywords:"vitamins supplements fish oil multivitamin vitamin c",aisle:"13",section:"",note:""},
+  {id:19,name:"Feminine Care",category:"Health",keywords:"tampons pads feminine pantyliners",aisle:"13",section:"",note:""},
+  {id:20,name:"Skin Care",category:"Health & Beauty",keywords:"lotion moisturizer face cream sunscreen cerave olay",aisle:"14",section:"",note:""},
+  {id:21,name:"Shaving",category:"Health & Beauty",keywords:"razor shave gillette blades shaving cream",aisle:"15",section:"",note:""},
+  {id:22,name:"Soap & Body Wash",category:"Health & Beauty",keywords:"body wash soap shower gel dove",aisle:"15",section:"",note:""},
+  {id:23,name:"Deodorant",category:"Health & Beauty",keywords:"deodorant antiperspirant",aisle:"16",section:"",note:""},
+  {id:24,name:"Hair Care",category:"Health & Beauty",keywords:"shampoo conditioner hair",aisle:"16",section:"",note:""},
+  {id:25,name:"Oral Care",category:"Health & Beauty",keywords:"toothpaste toothbrush mouthwash floss crest colgate dental teeth",aisle:"17",section:"",note:""},
+  {id:26,name:"Diapers",category:"Baby",keywords:"diapers huggies pampers",aisle:"18",section:"",note:"Also in aisle 19"},
+  {id:27,name:"Baby Wipes",category:"Baby",keywords:"baby wipes",aisle:"18",section:"",note:""},
+  {id:28,name:"Diapers",category:"Baby",keywords:"diapers huggies pampers",aisle:"19",section:"",note:"Also in aisle 18"},
+  {id:29,name:"Baby Food",category:"Baby",keywords:"baby food formula gerber",aisle:"19",section:"",note:""},
+  {id:30,name:"Baby Care",category:"Baby",keywords:"baby care lotion shampoo",aisle:"19",section:"",note:""},
+  {id:31,name:"Pet Care",category:"Pet",keywords:"dog cat food pet treats litter kibble",aisle:"20",section:"",note:"Also in aisle 21"},
+  {id:32,name:"Pet Care",category:"Pet",keywords:"dog cat food pet treats litter kibble",aisle:"21",section:"",note:"Also in aisle 20"},
+  {id:33,name:"Beer",category:"Beverages",keywords:"beer ipa lager seltzer",aisle:"22",section:"",note:"Check local rules for hours"},
+  {id:34,name:"Spirits",category:"Beverages",keywords:"liquor spirits vodka whiskey rum tequila gin alcohol",aisle:"23",section:"",note:""},
+  {id:35,name:"Juice",category:"Beverages",keywords:"juice orange apple cranberry",aisle:"24",section:"",note:"Also in aisle 25"},
+  {id:36,name:"Soda",category:"Beverages",keywords:"soda pop coke pepsi cola soft drink sprite",aisle:"24",section:"",note:"Also in aisle 25"},
+  {id:37,name:"Juice",category:"Beverages",keywords:"juice orange apple cranberry",aisle:"25",section:"",note:"Also in aisle 24"},
+  {id:38,name:"Soda",category:"Beverages",keywords:"soda pop coke pepsi cola soft drink sprite",aisle:"25",section:"",note:"Also in aisle 24"},
+  {id:39,name:"Energy Drinks",category:"Beverages",keywords:"energy drink red bull monster celsius",aisle:"26",section:"",note:""},
+  {id:40,name:"Iced Tea",category:"Beverages",keywords:"iced tea lipton arizona",aisle:"26",section:"",note:""},
+  {id:41,name:"Sports Drinks",category:"Beverages",keywords:"sports drink gatorade powerade electrolyte",aisle:"27",section:"",note:""},
+  {id:42,name:"Water",category:"Beverages",keywords:"water bottled spring poland",aisle:"27",section:"",note:"Also in aisle 28"},
+  {id:43,name:"Water",category:"Beverages",keywords:"water bottled spring poland",aisle:"28",section:"",note:"Also in aisle 27"},
+  {id:44,name:"Salty Snacks",category:"Snacks",keywords:"chips pretzels popcorn crackers nuts salty snacks lays",aisle:"29",section:"",note:""},
+  {id:45,name:"Nuts",category:"Snacks",keywords:"nuts almonds cashews peanuts trail mix",aisle:"Middle/Front",section:"Toward the middle/front of the store",note:""},
+  {id:46,name:"Breakfast",category:"Grocery",keywords:"cereal oatmeal pancake breakfast cheerios syrup",aisle:"30",section:"",note:""},
+  {id:47,name:"Proteins",category:"Grocery",keywords:"protein bars granola bars breakfast bars protein shakes powder",aisle:"31",section:"",note:""},
+  {id:48,name:"Coffee & Tea",category:"Grocery",keywords:"coffee tea k-cup keurig beans grounds",aisle:"32",section:"",note:""},
+  {id:49,name:"Baking Needs",category:"Grocery",keywords:"flour sugar baking mix baking soda",aisle:"33",section:"",note:""},
+  {id:50,name:"Spices",category:"Grocery",keywords:"spices seasoning salt pepper",aisle:"34",section:"",note:""},
+  {id:51,name:"Condiments",category:"Grocery",keywords:"ketchup mustard mayo condiments bbq sauce",aisle:"34",section:"",note:""},
+  {id:52,name:"Pickles & Olives",category:"Grocery",keywords:"pickles olives",aisle:"34",section:"",note:""},
+  {id:53,name:"Oils & Dressing",category:"Grocery",keywords:"olive oil cooking oil salad dressing vinegar",aisle:"35",section:"",note:""},
+  {id:54,name:"International Food",category:"Grocery",keywords:"international ethnic asian mexican goya",aisle:"36",section:"",note:""},
+  {id:55,name:"Soup",category:"Grocery",keywords:"soup broth ramen",aisle:"36",section:"",note:""},
+  {id:56,name:"Packaged Sides",category:"Grocery",keywords:"sides rice mac and cheese mashed potato stuffing",aisle:"36",section:"",note:"Also in aisle 37"},
+  {id:57,name:"Packaged Sides",category:"Grocery",keywords:"sides rice mac and cheese mashed potato stuffing",aisle:"37",section:"",note:"Also in aisle 36"},
+  {id:58,name:"Pasta & Sauces",category:"Grocery",keywords:"pasta spaghetti marinara sauce noodles barilla",aisle:"38",section:"",note:""},
+  {id:59,name:"Canned Meat & Fish",category:"Grocery",keywords:"canned tuna chicken salmon spam",aisle:"39",section:"",note:""},
+  {id:60,name:"Canned Fruit",category:"Grocery",keywords:"canned fruit peaches pineapple",aisle:"39",section:"",note:""},
+  {id:61,name:"Canned Vegetables",category:"Grocery",keywords:"canned vegetables corn green beans peas",aisle:"39",section:"",note:""},
+  {id:62,name:"Paper Towels",category:"Paper Goods",keywords:"paper towels bounty kitchen roll",aisle:"40",section:"",note:""},
+  {id:63,name:"Napkins",category:"Paper Goods",keywords:"napkins",aisle:"40",section:"",note:""},
+  {id:64,name:"Bath Tissue",category:"Paper Goods",keywords:"toilet paper tp bath tissue charmin",aisle:"41",section:"",note:""},
+  {id:65,name:"Facial Tissue",category:"Paper Goods",keywords:"tissue kleenex facial",aisle:"41",section:"",note:""},
+  {id:66,name:"Flowers",category:"Floral",keywords:"flowers bouquet roses floral",aisle:"29",section:"Refrigerated case near aisles 29–30",note:""},
+  {id:67,name:"Chips",category:"Snacks",keywords:"chips crisps lays doritos",aisle:"Beside Bakery",section:"",note:""},
+  {id:68,name:"Crackers",category:"Snacks",keywords:"crackers ritz saltines",aisle:"Beside Bakery",section:"",note:""},
+  {id:69,name:"Bars",category:"Snacks",keywords:"bars snack bars granola bars candy bars",aisle:"Middle",section:"",note:""},
+  {id:70,name:"Office",category:"Office",keywords:"office supplies paper pens notebooks printer",aisle:"Middle, beside Books",section:"",note:"Also beside the Membership Service Desk"},
+  {id:71,name:"Cookies",category:"Snacks",keywords:"cookies oreo chips ahoy",aisle:"Middle, beside Candy",section:"",note:""},
+  {id:72,name:"Candy",category:"Snacks",keywords:"candy chocolate sweets",aisle:"Middle",section:"",note:""},
+  {id:73,name:"Wine",category:"Beverages",keywords:"wine red white rose",aisle:"Beside Clothes",section:"",note:""},
+  {id:74,name:"Trash Bags",category:"Cleaning",keywords:"trash bags garbage hefty glad",aisle:"Beside Wine",section:"",note:""},
+  {id:75,name:"Sandwich Bags",category:"Cleaning",keywords:"sandwich bags ziploc baggies storage bags",aisle:"Beside Wine",section:"",note:""}
 ];
 
 /* ---------- helpers ---------- */
@@ -365,7 +373,12 @@ function parseQuery(text){
 const WAKE=/\b(tally|talley|tallie|talli|tali|taly|tallly|telly|tilly|terry|teri)\b/i;
 // A leading greeting also activates it ("Hi Tally…" works even if the name is misheard).
 const GREET=/^\s*(hi|hey|hello|hiya|yo|ok|okay)\b/i;
-function spokenLocation(item){ const a=item.aisle.trim(); return /\d/.test(a)?`at Aisle ${a}`:`in the ${a}`; }
+function spokenLocation(item){
+  const a = item.aisle.trim();
+  if(/\d/.test(a)) return `at Aisle ${a}`;          // "at Aisle 12"
+  if(/^(beside|by|near|next to)\b/i.test(a)) return a; // "beside Wine"
+  return `in the ${a}`;                              // "in the Deli", "in the Middle"
+}
 
 /* ---------- state ---------- */
 let catalog = [];
@@ -385,7 +398,7 @@ const supported = !!SR;
 
 /* Bump this whenever the built-in catalog (SEED) changes. Devices with an
    older saved version automatically pick up the new list on next open. */
-const CATALOG_VERSION = 2;
+const CATALOG_VERSION = 3;
 
 function loadCatalog(){
   const savedVer = parseInt(store.get("catalogVersion") || "0", 10);

@@ -1,7 +1,7 @@
 /* Aisle Finder service worker.
    Strategy: network-first for the app page (so updates appear automatically
    when online), cache fallback when offline. Other assets are cache-first. */
-const CACHE = "aisle-finder-v11";
+const CACHE = "aisle-finder-v12";
 const CORE = ["./", "./index.html"];
 
 self.addEventListener("install", (event) => {

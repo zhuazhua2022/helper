@@ -318,7 +318,12 @@ const SEED = [
   {id:72,name:"Candy",category:"Snacks",keywords:"candy chocolate sweets",aisle:"Middle",section:"",note:""},
   {id:73,name:"Wine",category:"Beverages",keywords:"wine red white rose",aisle:"Beside Clothes",section:"",note:""},
   {id:74,name:"Trash Bags",category:"Cleaning",keywords:"trash bags garbage hefty glad",aisle:"Beside Wine",section:"",note:""},
-  {id:75,name:"Sandwich Bags",category:"Cleaning",keywords:"sandwich bags ziploc baggies storage bags",aisle:"Beside Wine",section:"",note:""}
+  {id:75,name:"Sandwich Bags",category:"Cleaning",keywords:"sandwich bags ziploc baggies storage bags",aisle:"Beside Wine",section:"",note:""},
+  {id:76,name:"Peanut Butter",category:"Grocery",keywords:"peanut butter jif skippy pb nut butter",aisle:"Corner between Aisle 20 and Bakery",section:"",note:""},
+  {id:77,name:"Popcorn",category:"Snacks",keywords:"popcorn pop corn skinny pop kernels",aisle:"Beside Bakery",section:"",note:""},
+  {id:78,name:"Paper Plates & Forks",category:"Paper Goods",keywords:"paper plates forks plastic cutlery utensils disposable",aisle:"Beside Aisles 29–35, along the wall",section:"",note:""},
+  {id:79,name:"Wraps",category:"Grocery",keywords:"wraps tortillas flatbread pita",aisle:"Beside Produce, along the wall",section:"",note:""},
+  {id:80,name:"Cups",category:"Paper Goods",keywords:"cups paper cups plastic cups solo",aisle:"Beside Aisle 35, along the wall",section:"",note:""}
 ];
 
 /* ---------- helpers ---------- */
@@ -375,9 +380,11 @@ const WAKE=/\b(tally|talley|tallie|talli|tali|taly|tallly|telly|tilly|terry|teri
 const GREET=/^\s*(hi|hey|hello|hiya|yo|ok|okay)\b/i;
 function spokenLocation(item){
   const a = item.aisle.trim();
-  if(/\d/.test(a)) return `at Aisle ${a}`;          // "at Aisle 12"
-  if(/^(beside|by|near|next to)\b/i.test(a)) return a; // "beside Wine"
-  return `in the ${a}`;                              // "in the Deli", "in the Middle"
+  // A real aisle code: just digits, or a letter+digits like "E1"
+  if(/^[A-Za-z]?\d+[A-Za-z]?$/.test(a)) return `at Aisle ${a}`;
+  // Descriptive locations: read them as written
+  if(/^(beside|by|near|next to|corner|along|behind|across)\b/i.test(a)) return a;
+  return `in the ${a}`;
 }
 
 /* ---------- state ---------- */
@@ -398,7 +405,7 @@ const supported = !!SR;
 
 /* Bump this whenever the built-in catalog (SEED) changes. Devices with an
    older saved version automatically pick up the new list on next open. */
-const CATALOG_VERSION = 3;
+const CATALOG_VERSION = 4;
 
 function loadCatalog(){
   const savedVer = parseInt(store.get("catalogVersion") || "0", 10);
